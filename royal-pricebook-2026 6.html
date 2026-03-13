@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Plisse og Dupli - Priskatalog 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1a2535;--navy-mid:#243044;--teal:#2d6e7e;--sand:#f5f0e8;--warm-white:#fafaf7;--accent:#c8864a;--accent-light:#e8a870;--text:#1a2535;--text-mid:#4a5568;--text-light:#718096;--border:#e2ddd5;--shadow:0 4px 24px rgba(26,37,53,0.08);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--text);line-height:1.6;}
+.hero{background:var(--navy);color:white;padding:48px 40px;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;}
+.hero-brand{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent-light);margin-bottom:12px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,52px);font-weight:600;line-height:1.1;}
+.hero h1 em{color:var(--accent-light);font-style:normal;}
+.hero-sub{margin-top:10px;color:rgba(255,255,255,.6);font-size:15px;}
+.hero-year{font-family:'Playfair Display',serif;font-size:72px;font-weight:400;color:rgba(255,255,255,.08);user-select:none;line-height:1;}
+.lang-toggle{position:absolute;top:20px;right:24px;display:flex;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.2);}
+.lang-btn{padding:8px 18px;font-size:12px;font-weight:600;background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:none;cursor:pointer;transition:all .2s;}
+.lang-btn.active{background:var(--accent);color:white;}
+.nav-tabs{background:white;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;overflow-x:auto;}
+.nav-tab{padding:16px 22px;font-size:13px;font-weight:500;color:var(--text-light);border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap;}
+.nav-tab:hover{color:var(--teal);}
+.nav-tab.active{color:var(--navy);border-bottom-color:var(--accent);font-weight:600;}
+.section{display:none;max-width:1200px;margin:0 auto;padding:40px 32px;}
+.section.active{display:block;}
+.sec-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.sec-title{font-family:'Playfair Display',serif;font-size:30px;font-weight:600;color:var(--navy);}
+.sec-desc{margin-top:8px;color:var(--text-mid);font-size:15px;max-width:640px;}
+.sec-header{margin-bottom:32px;}
+.card{background:white;border-radius:14px;padding:28px;box-shadow:var(--shadow);border:1px solid var(--border);}
+.card-title{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--teal);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.calc-summary{background:linear-gradient(135deg,var(--navy),var(--navy-mid));border-radius:14px;padding:24px 28px;color:white;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:24px;}
+.sum-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;}
+.sum-total{font-family:'Playfair Display',serif;font-size:44px;font-weight:600;line-height:1;}
+.sum-count{font-size:12px;color:rgba(255,255,255,.4);margin-top:4px;}
+.prod-row{background:white;border-radius:14px;border:1.5px solid var(--border);margin-bottom:16px;overflow:hidden;}
+.prod-head{background:var(--sand);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.prod-num{font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--text-mid);letter-spacing:1px;text-transform:uppercase;}
+.prod-price-badge{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;color:var(--navy);}
+.prod-body{padding:16px 20px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:14px;align-items:end;}
+.prod-body2{padding:0 20px 12px;display:grid;grid-template-columns:2fr 1fr;gap:14px;align-items:end;}
+.prod-field label{display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-light);margin-bottom:5px;}
+.prod-field select,.prod-field input[type=number],.prod-field input[type=text]{width:100%;padding:8px 11px;border:1.5px solid var(--border);border-radius:8px;font-size:13px;font-family:inherit;background:var(--warm-white);}
+.prod-field select:focus,.prod-field input:focus{outline:none;border-color:var(--teal);}
+.prod-opts{padding:0 20px 14px;display:flex;gap:20px;flex-wrap:wrap;}
+.prod-opt{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text-mid);cursor:pointer;}
+.prod-opt input{width:14px;height:14px;cursor:pointer;}
+.fab-btns{display:flex;gap:4px;}
+.fab-btn{width:30px;height:30px;border:1.5px solid var(--border);border-radius:6px;background:white;font-size:12px;font-weight:700;cursor:pointer;color:var(--text-mid);transition:all .15s;}
+.fab-btn.active{background:var(--navy);color:white;border-color:var(--navy);}
+.btn-remove{background:none;border:none;color:#cbd5e0;cursor:pointer;font-size:16px;padding:4px 8px;border-radius:6px;transition:all .2s;line-height:1;}
+.btn-remove:hover{color:#e05d5d;background:#fff0f0;}
+.btn-add{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;border:2px dashed var(--border);border-radius:12px;background:transparent;color:var(--text-mid);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;margin-bottom:20px;}
+.btn-add:hover{border-color:var(--teal);color:var(--teal);}
+.btn-primary{padding:13px 24px;background:var(--accent);color:white;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap;}
+.btn-primary:hover{background:var(--accent-light);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-group{margin-bottom:0;}
+.form-group label{display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--text-light);margin-bottom:6px;}
+.form-group select,.form-group input,.form-group textarea{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;background:var(--warm-white);}
+.form-group select:focus,.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--teal);}
+.quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
+.adj-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--border);}
+.adj-row:last-child{border-bottom:none;}
+.adj-title{font-weight:600;font-size:13px;}
+.adj-desc{font-size:11px;color:var(--text-light);}
+.adj-input{display:flex;align-items:center;gap:6px;}
+.adj-input input{width:80px;padding:7px 10px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;text-align:right;font-family:'DM Mono',monospace;}
+.adj-input input:focus{outline:none;border-color:var(--teal);}
+.adj-sfx{font-weight:600;color:var(--text-mid);font-size:13px;}
+.q-total-row{display:flex;justify-content:space-between;padding:7px 0;font-size:13px;color:var(--text-mid);border-bottom:1px solid var(--border);}
+.q-total-row.grand{font-size:15px;font-weight:700;color:var(--navy);border-bottom:none;padding-top:12px;}
+.q-total-row.discount{color:#e05d5d;}
+.q-incvat{background:var(--navy);color:white;padding:12px 14px;border-radius:10px;margin-top:6px;font-size:14px;font-weight:700;display:flex;justify-content:space-between;align-items:center;}
+.q-incvat-val{color:var(--accent-light);font-family:'Playfair Display',serif;font-size:22px;}
+.q-prod-item{padding:10px 0;border-bottom:1px solid var(--border);}
+.q-prod-item-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+.q-prod-name{font-weight:600;font-size:13px;}
+.q-prod-sub{font-size:11px;color:var(--text-light);}
+.q-prod-amt{font-family:'DM Mono',monospace;font-size:13px;font-weight:600;white-space:nowrap;}
+.weight-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0;}
+.weight-card{background:var(--sand);border-radius:10px;padding:14px;border:1px solid var(--border);text-align:center;}
+.weight-letter{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--navy);margin-bottom:4px;}
+.weight-bar-wrap{height:4px;background:var(--border);border-radius:2px;margin:6px 0;}
+.weight-bar{height:4px;background:var(--accent);border-radius:2px;}
+.models-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+.model-card{border-radius:14px;overflow:hidden;border:1px solid var(--border);background:white;}
+.model-head{background:var(--navy);padding:18px 20px;display:flex;align-items:center;justify-content:space-between;}
+.model-code{font-family:'DM Mono',monospace;font-size:22px;font-weight:500;color:white;}
+.model-badge{font-size:11px;font-weight:600;background:rgba(255,255,255,.15);color:white;padding:4px 10px;border-radius:20px;}
+.model-body{padding:18px 20px;}
+.model-name{font-weight:600;font-size:15px;margin-bottom:6px;}
+.model-desc{font-size:13px;color:var(--text-mid);margin-bottom:12px;}
+.spec-row{display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid var(--border);}
+.spec-key{color:var(--text-light);}
+.model-surcharge{margin-top:12px;display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:var(--accent);}
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.guide-card{background:white;border-radius:14px;padding:22px;border:1px solid var(--border);box-shadow:var(--shadow);}
+.pt-controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+.pt-btn{padding:7px 14px;border:1.5px solid var(--border);border-radius:8px;background:white;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;}
+.pt-btn.active{background:var(--navy);color:white;border-color:var(--navy);}
+.price-table-wrap{overflow-x:auto;border-radius:10px;border:1px solid var(--border);}
+.price-table{width:100%;border-collapse:collapse;font-size:12px;}
+.price-table th{background:var(--navy);color:white;padding:8px 10px;font-family:'DM Mono',monospace;font-weight:500;white-space:nowrap;}
+.price-table td{padding:6px 10px;text-align:right;font-family:'DM Mono',monospace;border-bottom:1px solid var(--border);}
+.price-table tr:nth-child(even) td{background:#f9f8f6;}
+.price-table td.nd{color:#cbd5e0;text-align:center;}
+footer{background:var(--navy);color:rgba(255,255,255,.5);text-align:center;padding:28px;font-size:12px;margin-top:60px;}
+footer strong{color:white;}
+@media(max-width:768px){
+  .hero{flex-direction:column;padding:28px 16px;}
+  .nav-inner,.section{padding-left:16px;padding-right:16px;}
+  .prod-body{grid-template-columns:1fr 1fr;}
+  .quote-grid,.form-row{grid-template-columns:1fr;}
+  .weight-grid{grid-template-columns:repeat(3,1fr);}
+  .guide-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-no">NO</button>
+    <button class="lang-btn" id="btn-en">EN</button>
+  </div>
+  <div>
+    <div class="hero-brand" id="h-brand">Royal Priskatalog</div>
+    <h1>Pliss&#233; <em>&amp;</em> Dupli<br><em id="h-blinds">Gardiner</em></h1>
+    <div class="hero-sub" id="h-sub">Interaktiv priskatalog &middot; Gyldig fra januar 2026</div>
+  </div>
+  <div class="hero-year">2026</div>
+</div>
+
+<div class="nav-tabs">
+  <div class="nav-inner">
+    <button class="nav-tab active" id="nt-calc" data-tab="calc">&#129518; <span id="nl-calc">Priskalkulator</span></button>
+    <button class="nav-tab" id="nt-models" data-tab="models">&#128208; <span id="nl-models">Modeller</span></button>
+    <button class="nav-tab" id="nt-options" data-tab="options">&#9881;&#65039; <span id="nl-options">Tilvalg &amp; Tilbehør</span></button>
+    <button class="nav-tab" id="nt-guide" data-tab="guide">&#128214; <span id="nl-guide">Monteringsguide</span></button>
+    <button class="nav-tab" id="nt-tables" data-tab="tables">&#128202; <span id="nl-tables">Pristabeller</span></button>
+    <button class="nav-tab" id="nt-quote" data-tab="quote">&#128196; <span id="nl-quote">Tilbud</span></button>
+  </div>
+</div>
+
+<div class="section active" id="tab-calc">
+  <div class="sec-header">
+    <div class="sec-label" id="calc-lbl">Steg-for-steg</div>
+    <div class="sec-title" id="calc-ttl">Priskalkulator</div>
+    <div class="sec-desc" id="calc-dsc">Legg til opptil 5 produkter. Basert p&#229; AO10-prislisten (Pliss&#233; 20mm). Priser ekskl. mva.</div>
+  </div>
+  <div id="prod-container"></div>
+  <button class="btn-add" id="btn-add">
+    <span style="font-size:20px;line-height:1;">+</span>
+    <span id="btn-add-lbl">Legg til produkt</span>
+  </button>
+  <div class="calc-summary">
+    <div>
+      <div class="sum-label" id="sum-lbl">Totalsum ekskl. mva</div>
+      <div class="sum-total" id="sum-total">kr &mdash;</div>
+      <div class="sum-count" id="sum-count">0 produkter</div>
+    </div>
+    <button class="btn-primary" id="btn-quote">
+      &#128196; <span id="btn-quote-lbl">Lag tilbud</span>
+    </button>
+  </div>
+</div>
+
+<div class="section" id="tab-models">
+  <div class="sec-header">
+    <div class="sec-label" id="mod-lbl">Modeller</div>
+    <div class="sec-title" id="mod-ttl">Modelloversikt</div>
+    <div class="sec-desc" id="mod-dsc">Alle modeller for standard vinduer.</div>
+  </div>
+  <div class="models-grid" id="models-grid"></div>
+</div>
+
+<div class="section" id="tab-options">
+  <div class="sec-header">
+    <div class="sec-label" id="opt-lbl">Tilvalg</div>
+    <div class="sec-title" id="opt-ttl">Tilvalg &amp; Tilbeh&#248;r</div>
+  </div>
+  <div class="card">
+    <div class="card-title" id="opt-wt-ttl">Stoffgrupper (vektklasser)</div>
+    <div class="weight-grid" id="weight-grid"></div>
+  </div>
+</div>
+
+<div class="section" id="tab-guide">
+  <div class="sec-header">
+    <div class="sec-label" id="guide-lbl">Guide</div>
+    <div class="sec-title" id="guide-ttl">Monteringsguide</div>
+  </div>
+  <div class="guide-grid" id="guide-grid"></div>
+</div>
+
+<div class="section" id="tab-tables">
+  <div class="sec-header">
+    <div class="sec-label" id="tbl-lbl">Referanse</div>
+    <div class="sec-title" id="tbl-ttl">Pristabeller &ndash; Pliss&#233; 20mm, AO10</div>
+    <div class="sec-desc" id="tbl-dsc">Fullstendige pristabeller ekskl. mva. Velg stoffgruppe:</div>
+  </div>
+  <div class="pt-controls" id="pt-controls"></div>
+  <div style="margin-bottom:14px;font-size:13px;color:var(--text-mid);background:var(--sand);padding:10px 14px;border-radius:8px;" id="pt-info"></div>
+  <div class="price-table-wrap">
+    <table class="price-table">
+      <thead><tr id="pt-head"></tr></thead>
+      <tbody id="pt-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section" id="tab-quote">
+  <div class="sec-header">
+    <div class="sec-label" id="q-lbl">Tilbud</div>
+    <div class="sec-title" id="q-ttl">Lag tilbud</div>
+    <div class="sec-desc" id="q-dsc">Fyll inn kundeinformasjon, juster priser og skriv ut PDF-tilbud.</div>
+  </div>
+  <div class="quote-grid">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div class="card">
+        <div class="card-title" id="qc-cust">Kundeinformasjon</div>
+        <div class="form-row" style="gap:14px;">
+          <div class="form-group"><label id="ql-name">Kundenavn</label><input type="text" id="q-name" placeholder="Ola Nordmann"></div>
+          <div class="form-group"><label id="ql-ref">Referanse</label><input type="text" id="q-ref" placeholder="Prosjektnavn"></div>
+          <div class="form-group"><label id="ql-addr">Adresse</label><input type="text" id="q-addr" placeholder="Gateadresse"></div>
+          <div class="form-group"><label id="ql-city">By / Postnr</label><input type="text" id="q-city" placeholder="0150 Oslo"></div>
+          <div class="form-group" style="grid-column:span 2;"><label id="ql-email">E-post</label><input type="email" id="q-email" placeholder="kunde@example.com"></div>
+          <div class="form-group" style="grid-column:span 2;"><label id="ql-note">Merknad</label><textarea id="q-note" rows="2" style="resize:vertical;"></textarea></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title" id="qc-adj">Prisjusteringer</div>
+        <div class="adj-row">
+          <div><div class="adj-title" id="qa-disc">Rabatt</div><div class="adj-desc" id="qa-disc-d">Trekkes fra produktsum</div></div>
+          <div class="adj-input"><input type="number" id="q-discount" value="0" min="0" max="50" step="1"><span class="adj-sfx">%</span></div>
+        </div>
+        <div class="adj-row">
+          <div><div class="adj-title" id="qa-inst">Montering</div><div class="adj-desc" id="qa-inst-d">Fast bel&#248;p ekskl. mva</div></div>
+          <div class="adj-input"><span class="adj-sfx">kr</span><input type="number" id="q-installation" value="0" min="0" step="100"></div>
+        </div>
+        <div class="adj-row">
+          <div><div class="adj-title" id="qa-ship">Frakt</div><div class="adj-desc" id="qa-ship-d">Fast bel&#248;p ekskl. mva</div></div>
+          <div class="adj-input"><span class="adj-sfx">kr</span><input type="number" id="q-shipping" value="0" min="0" step="100"></div>
+        </div>
+        <div class="adj-row">
+          <div><div class="adj-title" id="qa-val">Gyldighet</div><div class="adj-desc" id="qa-val-d">Dager fra i dag</div></div>
+          <div class="adj-input"><input type="number" id="q-validity" value="14" min="1" max="90"><span class="adj-sfx" id="qa-days">dager</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title" id="qc-sell">Selgerinformasjon</div>
+        <div class="form-row" style="gap:14px;">
+          <div class="form-group"><label id="ql-seller">Selger</label><input type="text" id="q-seller" placeholder="Ditt navn"></div>
+          <div class="form-group"><label id="ql-phone">Telefon</label><input type="text" id="q-phone" placeholder="+47 xxx xx xxx"></div>
+          <div class="form-group" style="grid-column:span 2;"><label id="ql-semail">Selgers e-post</label><input type="email" id="q-semail" placeholder="deg@firma.no"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="position:sticky;top:80px;">
+        <div class="card-title" id="qc-sum">Tilbudssammendrag</div>
+        <div id="q-prod-list" style="margin-bottom:16px;min-height:40px;"></div>
+        <div id="q-totals"></div>
+        <div style="margin-top:18px;display:flex;flex-direction:column;gap:8px;">
+          <button class="btn-primary" id="btn-print" style="width:100%;justify-content:center;">
+            &#128424;&#65039; <span id="btn-print-lbl">Skriv ut / Lagre som PDF</span>
+          </button>
+          <div style="font-size:11px;color:var(--text-light);text-align:center;" id="print-hint">Bruk nettleserens utskriftsfunksjon og velg Lagre som PDF</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>royal</strong> Priskatalog 2026 &middot; Pliss&#233; &amp; Dupligardiner<br>
+  <span style="font-size:11px;">Priser ekskl. mva. Spesifikasjoner er stoffavhengige.</span>
+</footer>
+
+<script>
+const WIDTHS  = [60,70,80,90,100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300];
+const HEIGHTS = [100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300];
+
+const FABRIC_GROUPS = {
+  A: { letter:'A', name_no:'Gruppe A – Lys & Lett',    name_en:'Group A – Light & Sheer',
+       desc_no:'Lette, lysgjennomsiktige og filterende stoffer. Lavest stoff-vekt.',
+       desc_en:'Light, translucent and filtering fabrics. Lowest fabric weight.',
+       examples_no:'Voile, lys polyester, lette filtere', examples_en:'Voile, light polyester, light filters',
+       bar:100, maxPlisse:'6 m²', maxDupli:'5 m²' },
+  B: { letter:'B', name_no:'Gruppe B – Halvlys',        name_en:'Group B – Semi-transparent',
+       desc_no:'Halvlys stoffer med noe mer struktur. Passe mellom lett og standard.',
+       desc_en:'Semi-transparent fabrics with slightly more structure.',
+       examples_no:'Mellomtunge filtere, strukturerte vevde stoffer', examples_en:'Medium-weight filters, structured woven fabrics',
+       bar:80, maxPlisse:'6 m²', maxDupli:'5 m²' },
+  C: { letter:'C', name_no:'Gruppe C – Standard',       name_en:'Group C – Standard',
+       desc_no:'Standard mørkleggende og filterende stoffer. Den mest brukte gruppen.',
+       desc_en:'Standard blackout and filtering fabrics. The most commonly used group.',
+       examples_no:'Mørkleggende, standard polyester, linlook', examples_en:'Blackout, standard polyester, linen look',
+       bar:62, maxPlisse:'6 m²', maxDupli:'4 m²' },
+  D: { letter:'D', name_no:'Gruppe D – Tung',           name_en:'Group D – Heavy',
+       desc_no:'Tykkere og tyngre stoffer med høyere kvalitetsfølelse og bedre mørklegging.',
+       desc_en:'Thicker and heavier fabrics with a premium feel and better blackout.',
+       examples_no:'Premium mørkleggende, tykke vevde stoffer', examples_en:'Premium blackout, thick woven fabrics',
+       bar:45, maxPlisse:'4 m²', maxDupli:'3 m²' },
+  E: { letter:'E', name_no:'Gruppe E – Ekstra tung',    name_en:'Group E – Extra heavy',
+       desc_no:'De tyngste og mest eksklusive stoffene. Begrenset maks areal.',
+       desc_en:'The heaviest and most exclusive fabrics. Limited maximum area.',
+       examples_no:'Eksklusive premium-stoffer, tunge teksturer', examples_en:'Exclusive premium fabrics, heavy textures',
+       bar:28, maxPlisse:'3 m²', maxDupli:'2 m²' },
+};
+
+// Price tables: rows = heights index (100-300 by 10), cols = widths index (60-300 by 10)
+// Source: royal 2026 Plissé/Dupli catalogue, AO10, Plissé 20mm
+// null = out of range for that fabric class
+
+const PRICE_DATA = {
+  A: [
+    [1.719,1.859,2.011,2.159,2.321,2.470,2.602,2.751,2.914,3.065,3.214,3.321,3.494,3.645,3.762,3.914,4.031,4.224,4.332,4.504,4.612,4.730,4.902,5.040,5.160],
+    [1.763,1.913,2.066,2.225,2.382,2.569,2.697,2.838,3.032,3.148,3.310,3.481,3.600,3.748,3.921,4.053,4.224,4.343,4.477,4.677,5.106,5.256,5.406,null,null],
+    [1.783,1.977,2.150,2.312,2.482,2.612,2.795,2.966,3.106,3.301,3.429,3.579,3.752,3.904,4.085,4.224,4.375,4.558,4.697,4.881,4.987,5.160,5.312,5.471,5.602],
+    [1.849,2.011,2.191,2.353,2.602,2.795,2.881,3.065,3.227,3.377,3.567,3.767,3.904,4.103,4.353,4.558,4.720,4.890,5.062,5.193,5.353,5.536,5.686,5.830,5.837],
+    [1.891,2.066,2.247,2.429,2.602,2.795,2.989,3.126,3.321,3.514,3.687,3.881,4.031,4.213,4.353,4.558,4.720,4.890,5.062,5.244,5.406,5.567,5.761,5.914,6.051],
+    [1.934,2.141,2.315,2.515,2.687,2.881,3.065,3.227,3.429,3.600,3.781,3.977,4.192,4.428,4.678,5.050,5.193,5.417,5.578,5.794,5.986,6.125,6.298,null,null],
+    [1.988,2.182,2.353,2.579,2.751,2.966,3.126,3.342,3.559,3.731,3.904,4.105,4.289,4.504,4.697,4.881,5.050,5.235,5.439,5.602,5.805,5.986,6.183,6.322,6.514],
+    [2.011,2.225,2.429,2.623,2.763,3.009,3.227,3.441,3.654,3.889,4.031,4.289,4.444,4.612,4.868,5.040,5.272,5.578,5.794,5.997,6.190,6.353,6.547,6.749,null],
+    [2.066,2.302,2.505,2.697,2.914,3.106,3.321,3.559,3.752,3.944,4.171,4.353,4.578,4.781,4.965,5.170,5.406,5.578,5.794,5.986,6.212,6.353,6.568,6.762,6.977],
+    [2.131,2.376,2.602,2.817,3.065,3.301,3.526,3.731,3.944,4.201,4.362,4.599,4.868,5.073,5.298,5.511,5.741,5.943,6.183,6.342,6.568,6.804,7.018,7.170,7.416],
+    [2.216,2.438,2.692,2.914,3.117,3.365,3.600,3.869,4.041,4.246,4.537,4.730,4.965,5.215,5.450,5.700,5.941,6.287,6.514,6.749,7.018,7.170,7.416,null,null],
+    [2.247,2.470,2.740,2.989,3.227,3.441,3.698,3.914,4.183,4.375,4.631,4.881,5.116,5.364,5.578,5.815,6.040,6.287,6.514,6.749,6.977,7.170,7.416,7.642,7.855],
+    [2.312,2.569,2.838,3.042,3.302,3.537,3.731,4.031,4.270,4.547,4.761,5.008,5.256,5.511,5.783,6.000,6.247,6.530,6.803,7.073,7.322,7.569,null,null,null],
+    [2.331,2.602,2.838,3.106,3.365,3.600,3.889,4.118,4.362,4.612,4.881,5.149,5.417,5.619,5.921,6.125,6.353,6.621,6.880,7.118,7.353,7.610,7.825,8.072,8.309],
+    [2.376,2.623,2.914,3.182,3.441,3.779,4.021,4.224,4.504,4.721,4.987,5.256,5.536,5.794,6.020,6.278,6.547,6.826,7.060,7.331,7.566,7.805,8.008,8.288,8.534],
+    [2.460,2.663,2.966,3.235,3.481,3.825,4.021,4.321,4.599,4.858,5.084,5.353,5.619,5.914,6.149,6.427,6.696,6.954,7.191,7.469,7.729,7.955,8.168,8.438,8.695],
+    [2.515,2.730,3.020,3.301,3.559,3.730,3.904,4.252,4.549,4.795,5.044,5.321,5.632,5.933,6.135,6.425,6.715,6.990,7.218,7.530,7.805,8.016,8.268,null,null],
+    [2.579,2.773,3.073,3.365,3.611,3.977,4.183,4.504,4.794,5.040,5.278,5.557,5.870,6.149,6.417,6.685,6.954,7.254,7.481,7.771,8.018,8.277,8.502,8.791,9.050],
+    [2.617,2.817,3.148,3.441,3.687,4.041,4.343,4.590,4.881,5.100,5.361,5.611,5.870,6.147,6.415,6.682,6.949,7.254,7.481,7.791,8.038,8.297,8.528,null,null],
+    [2.663,2.892,3.227,3.494,3.752,4.125,4.343,4.665,4.965,5.244,5.504,5.794,6.117,6.417,6.654,6.942,7.254,7.514,7.794,8.083,8.373,8.610,8.846,9.145,9.415],
+    [2.663,2.892,3.227,3.494,3.752,4.125,4.343,4.665,4.965,5.244,5.504,5.794,6.117,6.417,6.654,6.942,7.254,7.514,7.794,8.083,8.373,8.610,8.846,9.145,9.415],
+  ],
+  B: [
+    [2.165,2.344,2.533,2.719,2.924,3.112,3.275,3.467,3.669,3.860,4.047,4.182,4.402,4.590,4.738,4.928,5.075,5.320,5.454,5.670,5.807,5.957,6.171,6.346,6.497],
+    [2.219,2.410,2.706,2.802,3.033,3.236,3.396,3.573,3.816,4.010,4.168,4.386,4.535,4.738,4.939,5.105,5.320,5.470,5.711,5.886,6.104,6.243,6.488,6.620,6.811],
+    [2.247,2.490,2.706,2.912,3.126,3.291,3.519,3.738,3.912,4.158,4.320,4.506,4.723,4.916,5.146,5.320,5.507,5.739,5.914,6.145,6.279,6.497,6.686,6.889,7.053],
+    [2.381,2.600,2.834,3.059,3.275,3.519,3.764,3.937,4.182,4.426,4.644,4.680,4.916,5.165,5.349,5.607,5.943,6.161,6.376,6.607,6.811,7.013,7.253,7.445,7.620],
+    [2.381,2.600,2.834,3.059,3.275,3.519,3.764,3.937,4.182,4.426,4.644,4.886,5.075,5.305,5.483,5.739,5.943,6.161,6.376,6.607,6.811,7.013,7.253,7.445,7.620],
+    [2.503,2.693,2.965,3.168,3.467,3.738,3.937,4.209,4.482,4.697,4.916,5.171,5.401,5.670,5.914,6.145,6.360,6.592,6.811,7.053,7.310,7.538,7.785,7.959,8.202],
+    [2.503,2.750,2.965,3.249,3.467,3.738,4.003,4.209,4.482,4.697,4.916,5.171,5.401,5.670,5.914,6.145,6.360,6.592,6.850,7.053,7.310,7.538,7.785,7.959,8.202],
+    [2.600,2.896,3.154,3.396,3.669,3.912,4.182,4.482,4.723,4.968,5.254,5.483,5.765,6.023,6.253,6.512,6.811,7.023,7.295,7.538,7.822,8.001,8.311,8.514,8.785],
+    [2.719,3.072,3.275,3.478,3.860,4.060,4.439,4.697,4.968,5.254,5.401,5.670,5.943,6.253,6.484,6.811,7.023,7.486,7.785,7.987,8.270,8.571,8.839,9.029,9.340],
+    [2.834,3.112,3.452,3.669,3.860,4.158,4.438,4.870,5.091,5.401,5.494,5.794,6.131,6.389,6.673,6.943,7.230,7.486,7.785,7.987,8.270,8.571,8.839,9.029,9.340],
+    [2.957,3.183,3.452,3.669,3.860,4.238,4.654,4.928,5.264,5.507,5.711,5.957,6.253,6.530,6.811,7.207,7.561,8.041,8.302,8.628,8.965,9.248,9.608,null,null],
+    [2.834,3.112,3.452,3.764,4.060,4.332,4.654,4.928,5.264,5.507,5.834,6.145,6.444,6.755,7.023,7.321,7.607,7.917,8.202,8.503,8.785,9.029,9.340,9.623,9.893],
+    [3.190,3.418,3.699,3.869,4.158,4.438,4.654,4.928,5.185,5.451,5.729,6.036,6.290,6.547,6.839,7.107,7.407,7.695,8.048,8.274,8.621,8.866,9.063,9.525,9.797],
+    [3.072,3.275,3.573,3.912,4.238,4.535,4.900,5.186,5.494,5.807,6.145,6.484,6.820,7.080,7.458,7.715,8.001,8.337,8.662,8.960,9.259,9.585,9.853,10.166,10.462],
+    [3.072,3.305,3.573,3.912,4.007,4.535,4.754,5.148,5.387,5.807,6.072,6.510,6.947,7.216,7.435,7.699,7.954,8.286,8.641,8.895,9.211,9.509,9.731,10.080,10.462],
+    [3.249,3.354,3.738,4.074,4.386,4.818,4.916,5.440,5.794,6.116,6.403,6.742,7.080,7.445,7.745,8.094,8.433,8.758,9.055,9.409,9.733,10.016,10.287,10.628,10.951],
+    [3.249,3.507,3.870,4.158,4.527,4.818,5.095,5.440,5.764,5.950,6.165,6.551,6.938,7.296,7.578,7.857,8.183,8.468,8.737,9.064,9.394,9.638,9.936,10.241,10.510],
+    [3.249,3.493,3.870,4.238,4.547,5.008,5.264,5.670,6.037,6.346,6.673,6.999,7.391,7.745,8.079,8.419,8.758,9.137,9.422,9.786,10.098,10.424,10.706,11.074,11.398],
+    [3.305,3.547,3.870,4.238,4.547,5.008,5.264,5.670,6.037,6.346,6.673,6.999,7.391,7.745,8.079,8.419,8.758,9.137,9.422,9.786,10.098,10.424,10.706,11.074,null],
+    [3.354,3.641,4.060,4.402,4.723,5.196,5.470,5.873,6.253,6.607,6.931,7.295,7.703,8.079,8.378,8.744,9.137,9.422,9.812,10.179,10.546,10.841,11.141,11.518,11.857],
+    [3.354,3.641,4.060,4.402,4.723,5.196,5.470,5.873,6.253,6.607,6.931,7.295,7.703,8.079,8.378,8.744,9.137,9.422,9.812,10.179,10.546,10.841,11.141,11.518,11.857],
+  ],
+  C: [
+    [2.477,2.677,2.898,3.110,3.343,3.558,3.745,3.964,4.195,4.413,4.629,4.782,5.035,5.248,5.418,5.635,5.806,6.084,6.240,6.485,6.643,6.812,7.060,7.258,7.432],
+    [2.538,2.755,2.975,3.203,3.466,3.776,4.087,4.365,4.536,4.768,5.017,5.185,5.418,5.640,5.837,6.066,6.531,6.788,6.981,7.137,7.354,7.571,7.788,null,null],
+    [2.570,2.846,3.096,3.328,3.575,3.763,4.026,4.272,4.474,4.756,4.939,5.152,5.403,5.621,5.880,6.084,6.300,6.565,6.765,7.028,7.183,7.432,7.649,7.882,8.066],
+    [2.663,2.898,3.158,3.389,3.698,3.902,4.149,4.413,4.644,4.842,5.137,5.356,5.621,5.837,6.084,6.565,7.046,7.274,7.479,7.710,7.971,8.190,8.407,null,null],
+    [2.726,2.975,3.236,3.500,3.745,4.026,4.307,4.505,4.782,5.060,5.308,5.590,5.806,6.070,6.269,6.565,6.797,7.046,7.293,7.554,7.788,8.023,8.299,8.514,8.717],
+    [2.789,3.033,3.343,3.698,3.993,4.179,4.413,4.811,5.149,5.528,5.912,6.036,6.255,6.558,6.840,7.000,7.274,7.574,7.791,8.057,8.355,8.576,null,null,null],
+    [2.860,3.145,3.389,3.711,3.964,4.272,4.505,4.814,5.125,5.372,5.621,5.912,6.177,6.485,6.765,7.028,7.274,7.539,7.833,8.066,8.364,8.623,8.903,9.105,9.379],
+    [2.898,3.213,3.500,3.940,4.382,4.644,4.952,5.265,5.590,5.870,6.115,6.441,6.671,6.942,7.258,7.539,7.820,8.066,8.344,8.636,8.914,9.151,9.459,9.725,null],
+    [2.975,3.315,3.609,3.887,4.195,4.474,4.782,5.125,5.403,5.681,6.006,6.269,6.596,6.888,7.154,7.445,7.788,8.035,8.344,8.623,8.949,9.151,9.459,9.739,10.048],
+    [3.083,3.422,3.698,4.057,4.338,4.634,4.939,5.372,5.681,6.063,6.286,6.595,7.090,7.307,7.627,7.985,8.344,8.623,8.903,9.134,9.504,9.801,10.110,10.327,10.681],
+    [3.190,3.558,3.870,4.307,4.491,4.846,5.171,5.541,5.821,6.177,6.720,7.000,7.340,7.640,8.075,8.637,9.055,9.379,9.764,10.078,10.327,10.681,11.006,null,null],
+    [3.236,3.558,3.948,4.307,4.644,4.952,5.325,5.635,6.022,6.300,6.671,7.028,7.371,7.724,8.035,8.374,8.699,9.055,9.379,9.725,10.048,10.327,10.681,11.006,11.316],
+    [3.328,3.732,4.026,4.562,5.107,5.451,5.806,6.146,6.547,6.859,7.215,7.571,7.940,8.310,8.694,9.020,9.375,9.756,10.088,10.448,10.773,11.089,null,null,null],
+    [3.360,3.745,4.087,4.474,4.846,5.185,5.603,5.931,6.285,6.643,7.028,7.415,7.799,8.096,8.528,8.824,9.151,9.536,9.908,10.247,10.588,10.897,11.269,11.628,11.965],
+    [3.399,3.745,4.195,4.658,4.939,5.510,5.790,6.223,6.626,6.997,7.325,7.652,8.096,8.514,8.776,9.057,9.430,9.644,10.013,10.219,10.614,11.006,11.240,11.648,12.062],
+    [3.543,3.839,4.272,4.658,5.017,5.510,5.790,6.223,6.626,6.997,7.325,7.865,8.514,8.857,9.257,9.644,10.013,10.357,10.759,11.129,11.456,11.768,12.155,12.524,12.772],
+    [3.623,3.930,4.350,4.756,5.125,5.621,5.898,6.362,6.749,7.106,7.618,8.000,8.345,8.748,9.060,9.435,9.805,10.186,10.527,10.873,11.209,11.548,11.876,null,null],
+    [3.711,3.994,4.426,4.846,5.202,5.729,6.022,6.485,6.904,7.258,7.711,8.150,8.591,9.006,9.398,9.820,10.253,10.632,10.984,11.334,11.745,12.055,12.372,12.684,12.996],
+    [3.780,4.057,4.536,4.952,5.308,5.945,6.130,6.608,7.156,7.490,7.852,8.221,8.619,9.040,9.420,9.800,10.226,10.611,10.996,11.368,11.728,12.087,null,null,null],
+    [3.839,4.165,4.644,5.035,5.403,5.945,6.255,6.719,7.154,7.554,7.926,8.344,8.810,9.244,9.584,10.003,10.450,10.822,11.225,11.644,12.060,12.399,12.740,13.176,13.560],
+    [3.839,4.165,4.644,5.035,5.403,5.945,6.255,6.719,7.154,7.554,7.926,8.344,8.810,9.244,9.584,10.003,10.450,10.822,11.225,11.644,12.060,12.399,12.740,13.176,13.560],
+  ],
+  D: [
+    [2.574,2.782,3.011,3.229,3.474,3.699,3.893,4.117,4.359,4.584,4.811,4.971,5.230,5.451,5.630,5.856,6.033,6.323,6.482,6.740,6.903,7.077,7.335,7.542,7.722],
+    [2.638,2.864,2.975,3.329,3.602,3.844,4.037,4.248,4.536,4.713,5.000,5.191,5.438,5.680,5.937,6.199,6.445,6.703,6.956,7.205,7.454,7.703,null,null,null],
+    [2.671,2.958,3.218,3.461,3.716,3.911,4.182,4.438,4.650,4.939,5.133,5.356,5.614,5.840,6.114,6.323,6.549,6.819,7.029,7.303,7.463,7.722,7.950,8.188,8.382],
+    [2.765,3.011,3.241,3.581,3.844,4.023,4.309,4.554,4.828,5.054,5.356,5.566,5.840,6.117,6.367,6.635,6.909,7.174,7.440,7.712,7.985,8.258,8.534,8.807,9.057],
+    [2.831,3.088,3.362,3.637,3.893,4.182,4.474,4.682,4.971,5.258,5.516,5.807,6.033,6.308,6.514,6.819,7.063,7.319,7.577,7.849,8.092,8.334,8.622,8.846,9.057],
+    [2.897,3.203,3.474,3.860,4.023,4.584,4.584,5.133,5.387,5.730,6.000,6.142,6.368,6.596,6.833,7.072,7.316,7.566,7.814,8.069,8.326,8.589,null,null,null],
+    [2.977,3.268,3.524,3.860,4.117,4.438,4.682,5.003,5.324,5.581,5.840,6.144,6.419,6.740,7.029,7.303,7.560,7.832,8.142,8.382,8.690,8.974,9.253,9.460,9.749],
+    [3.011,3.338,3.637,4.000,4.359,4.828,5.147,5.470,5.807,6.063,6.355,6.690,6.934,7.219,7.494,7.781,8.065,8.350,8.638,8.924,9.215,9.509,9.829,null,null],
+    [3.088,3.442,3.749,4.037,4.359,4.650,4.971,5.324,5.614,5.903,6.244,6.514,6.852,7.160,7.435,7.738,8.092,8.348,8.670,8.974,9.297,9.509,9.829,10.119,10.441],
+    [3.203,3.555,3.893,4.214,4.505,4.939,5.148,5.581,5.903,6.287,6.529,6.885,7.288,7.591,7.930,8.251,8.590,8.895,9.253,9.490,9.829,10.183,10.507,10.730,11.099],
+    [3.316,3.699,4.023,4.474,4.665,5.029,5.371,5.753,6.050,6.419,6.910,7.218,7.590,7.961,8.338,8.712,9.078,9.448,9.821,10.197,10.577,10.957,11.338,null,null],
+    [3.362,3.699,4.102,4.474,4.828,5.147,5.535,5.856,6.258,6.500,6.934,7.303,7.659,8.025,8.348,8.701,9.038,9.409,9.749,10.103,10.441,10.730,11.099,11.438,11.758],
+    [3.461,3.893,4.182,4.809,5.387,5.661,6.033,6.388,6.805,7.163,7.535,7.912,8.296,8.681,9.068,9.460,9.853,10.248,10.647,11.049,11.454,11.862,null,null,null],
+    [3.491,3.893,4.248,4.650,5.035,5.387,5.821,6.161,6.529,6.903,7.303,7.703,8.107,8.413,8.862,9.168,9.509,9.909,10.296,10.651,11.003,11.325,11.710,12.083,12.435],
+    [3.523,3.987,4.359,4.842,5.133,5.728,6.016,6.467,6.885,7.268,7.654,8.048,8.449,8.862,9.279,9.699,10.124,10.557,10.995,11.440,11.892,12.352,12.820,13.297,null],
+    [3.682,3.987,4.520,4.842,5.213,5.728,6.016,6.467,6.885,7.268,7.654,8.048,8.449,8.862,9.279,9.699,10.124,10.557,10.995,11.440,11.892,12.352,12.820,13.297,13.781],
+    [3.860,4.083,4.650,5.035,5.324,5.793,6.127,6.612,7.014,7.434,7.867,8.311,8.765,9.226,9.691,10.161,10.636,11.117,11.602,12.094,12.594,13.101,13.618,14.143,null],
+    [3.860,4.150,4.598,5.035,5.405,5.953,6.258,6.740,7.174,7.542,7.924,8.319,8.726,9.145,9.573,10.014,10.464,10.926,11.398,11.880,12.373,12.876,13.390,13.915,14.452],
+    [3.924,4.150,4.713,5.230,5.516,5.953,6.367,6.982,7.303,7.660,8.029,8.411,8.807,9.215,9.636,10.068,10.514,10.971,11.440,11.923,12.418,12.926,13.448,null,null],
+    [3.987,4.327,4.828,5.230,5.614,6.177,6.500,6.982,7.435,7.849,8.277,8.718,9.172,9.639,10.118,10.611,11.117,11.636,12.169,12.715,13.275,13.850,14.439,15.044,null],
+    [3.987,4.327,4.828,5.230,5.614,6.177,6.500,6.982,7.435,7.849,8.277,8.718,9.172,9.639,10.118,10.611,11.117,11.636,12.169,12.715,13.275,13.850,14.439,15.044,null],
+  ],
+  E: [
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  ]
+};
+
+
+
+// ─── TRANSLATIONS ─────────────────────────────────────────────────────
+var LANG = 'no';
+var TR = {
+  no: {
+    addProd:'Legg til produkt', maxProds:'Maks 5 produkter.',
+    prod:function(n){return 'Produkt '+n;},
+    exclVat:'ekskl. mva', unitPrice:'Enhetspris',
+    invalid:'Ugyldig pris',
+    fabLabel:'Stoffgruppe',
+    widthLabel:'Bredde (cm)', heightLabel:'Hoyde (cm)',
+    typeLabel:'Type', modelLabel:'Modell', qtyLabel:'Antall',
+    descLabel:'Beskrivelse', descPh:'f.eks. Stue vindu vest',
+    optL:'Sidelister L (kr 180/m)', optU:'Sidelister U (kr 180/m)', optD:'Designmodell (+kr 217)',
+    removeTitle:'Fjern produkt',
+    noProds:'Ingen produkter lagt til. Ga til Priskalkulator.',
+    prodSum:'Produktsum', disc:'Rabatt', inst:'Montering', ship:'Frakt',
+    totalExVat:'Total ekskl. mva', vat:'MVA 25%', totalIncVat:'TOTAL inkl. mva',
+    sumLbl:'Totalsum ekskl. mva',
+    prodsConf:function(n){return n+' produkt'+(n!==1?'er':'')+' konfigurert';},
+    makeQuote:'Lag tilbud', printPdf:'Skriv ut / Lagre som PDF',
+    printHint:'Bruk nettleserens utskriftsfunksjon og velg Lagre som PDF',
+    types:{plisse20:'Plisse 20 mm', dupli25:'Dupli 25 mm', dupli32:'Dupli 32 mm'},
+    models:{
+      AO10:'AO10 - Fritthengende (standard)', AO20:'AO20 - 2 snorer + fri parkering',
+      AO30:'AO30 - 2-i-1 dag/natt', AO40:'AO40 - Skra karm',
+      AO70:'AO70 - Skra karm (variant)', AK10:'AK10 - Kjedetrekk',
+      BB24:'BB24-A3 - Selvklebende glassprofil'
+    },
+    pdfTitle:'TILBUD', pdfCust:'Kunde', pdfSell:'Selger',
+    pdfDate:'Dato', pdfValid:'Gyldig til', pdfQty:'Ant.',
+    pdfUnitP:'Enhetspris', pdfLineT:'Linjesum',
+    pdfValidFor:function(n,d){return 'Tilbudet er gyldig i '+n+' dager, til '+d;},
+    pdfFooter:'Royal Solskjerming AS - Royal Plisse og Dupligardiner - Priskatalog 2026 - Alle priser ekskl. mva.',
+    popupBlocked:'Nettleseren blokkerte popup. Tillat popup og prøv igjen.',
+    gruppeWord:'Gruppe'
+  },
+  en: {
+    addProd:'Add product', maxProds:'Max 5 products.',
+    prod:function(n){return 'Product '+n;},
+    exclVat:'excl. VAT', unitPrice:'Unit price',
+    invalid:'Invalid price',
+    fabLabel:'Fabric Group',
+    widthLabel:'Width (cm)', heightLabel:'Height (cm)',
+    typeLabel:'Type', modelLabel:'Model', qtyLabel:'Qty',
+    descLabel:'Description', descPh:'e.g. Living room west window',
+    optL:'Side rails L (kr 180/m)', optU:'Side rails U (kr 180/m)', optD:'Design model (+kr 217)',
+    removeTitle:'Remove product',
+    noProds:'No products added yet. Go to Price Calculator.',
+    prodSum:'Product total', disc:'Discount', inst:'Installation', ship:'Shipping',
+    totalExVat:'Total excl. VAT', vat:'VAT 25%', totalIncVat:'TOTAL incl. VAT',
+    sumLbl:'Grand total excl. VAT',
+    prodsConf:function(n){return n+' product'+(n!==1?'s':'')+' configured';},
+    makeQuote:'Create quote', printPdf:'Print / Save as PDF',
+    printHint:'Use the browser print function and choose Save as PDF',
+    types:{plisse20:'Plisse 20 mm', dupli25:'Dupli 25 mm', dupli32:'Dupli 32 mm'},
+    models:{
+      AO10:'AO10 - Free-hanging (standard)', AO20:'AO20 - 2 cords + free parking',
+      AO30:'AO30 - 2-in-1 day/night', AO40:'AO40 - Angled frame',
+      AO70:'AO70 - Angled frame (variant)', AK10:'AK10 - Chain operated',
+      BB24:'BB24-A3 - Self-adhesive glass profile'
+    },
+    pdfTitle:'QUOTE', pdfCust:'Customer', pdfSell:'Seller',
+    pdfDate:'Date', pdfValid:'Valid until', pdfQty:'Qty',
+    pdfUnitP:'Unit price', pdfLineT:'Line total',
+    pdfValidFor:function(n,d){return 'This quote is valid for '+n+' days, until '+d;},
+    pdfFooter:'Royal Solskjerming AS - Royal Plisse and Dupli Blinds - Price Catalogue 2026 - All prices excl. VAT.',
+    popupBlocked:'Browser blocked popup. Allow popups and try again.',
+    gruppeWord:'Group'
+  }
+};
+function t(){return TR[LANG];}
+function kr(n){return 'kr\u00a0'+Math.round(n).toLocaleString('no-NO');}
+
+// ─── MODEL DATA ────────────────────────────────────────────────────────
+var MODEL_KEYS = ['AO10','AO20','AO30','AO40','AO70','AK10','BB24'];
+var MODEL_SC   = {AO10:0,AO20:730,AO30:572,AO40:2096,AO70:1842,AK10:1391,BB24:1257};
+
+// ─── PRODUCTS STATE ────────────────────────────────────────────────────
+var products = [];
+var prodCounter = 0;
+
+// ─── PRICE LOOKUP ──────────────────────────────────────────────────────
+function lookupPrice(cls, w, h) {
+  var data = PRICE_DATA[cls];
+  if (!data) return null;
+  var wC = Math.max(60, Math.min(300, w));
+  var hC = Math.max(100, Math.min(300, h));
+  var wi = Math.max(0, Math.min(WIDTHS.length-2,  Math.floor((wC-60)/10)));
+  var hi = Math.max(0, Math.min(HEIGHTS.length-2, Math.floor((hC-100)/10)));
+  var wf = (wC - WIDTHS[wi])/10;
+  var hf = (hC - HEIGHTS[hi])/10;
+  var v00=data[hi][wi], v10=data[hi][wi+1], v01=data[hi+1][wi], v11=data[hi+1][wi+1];
+  var vals=[v00,v10,v01,v11].filter(function(v){return v!=null;});
+  if (!vals.length) return null;
+  var avg=vals.reduce(function(a,b){return a+b;},0)/vals.length;
+  function s(v){return v!=null?v:avg;}
+  var raw = s(v00)*(1-wf)*(1-hf)+s(v10)*wf*(1-hf)+s(v01)*(1-wf)*hf+s(v11)*wf*hf;
+  return raw>0 ? raw*1000 : null;
+}
+
+function calcProduct(p) {
+  var fp = lookupPrice(p.cls, p.w, p.h);
+  if (fp===null){p.price=null;return;}
+  if (p.type==='dupli25') fp*=1.04;
+  if (p.type==='dupli32') fp*=1.08;
+  var total = Math.round(fp) + MODEL_SC[p.model];
+  if (p.optL) total += Math.round((p.h/100)*2*180);
+  if (p.optU) total += Math.round((p.h/100)*2*180);
+  if (p.optD) total += 217;
+  p.price = total;
+}
+
+// ─── DOM HELPERS ───────────────────────────────────────────────────────
+function el(tag, cls, txt) {
+  var e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (txt!==undefined) e.textContent = txt;
+  return e;
+}
+function inp(type, val, min, max, step) {
+  var e = document.createElement('input');
+  e.type = type; e.value = val;
+  if (min!==undefined) e.min = min;
+  if (max!==undefined) e.max = max;
+  if (step!==undefined) e.step = step;
+  return e;
+}
+function sel(opts, selected) {
+  var s = document.createElement('select');
+  opts.forEach(function(o) {
+    var opt = document.createElement('option');
+    opt.value = o.val; opt.textContent = o.lbl;
+    if (o.val===selected) opt.selected = true;
+    s.appendChild(opt);
+  });
+  return s;
+}
+function set(id, txt) {
+  var e = document.getElementById(id);
+  if (e) e.textContent = txt;
+}
+
+// ─── RENDER ONE PRODUCT ROW ────────────────────────────────────────────
+function renderProd(p, idx) {
+  var L = t();
+  var lineTotal = p.price!==null ? p.price*(p.qty||1) : null;
+
+  var row = el('div','prod-row');
+  row.id = 'prod-'+p.id;
+
+  // Header
+  var head = el('div','prod-head');
+  var numSpan = el('span','prod-num', L.prod(idx+1));
+  var rightDiv = el('div');
+  rightDiv.style.cssText = 'display:flex;align-items:center;gap:16px;';
+  var badge = el('span','prod-price-badge');
+  badge.id = 'prod-badge-'+p.id;
+  var priceSpan = el('span');
+  priceSpan.textContent = lineTotal!==null ? kr(lineTotal) : '—';
+  var smallSpan = el('small');
+  smallSpan.style.cssText = 'font-family:DM Sans,sans-serif;font-size:11px;font-weight:400;color:var(--text-light);';
+  smallSpan.textContent = ' '+L.exclVat;
+  badge.appendChild(priceSpan);
+  badge.appendChild(smallSpan);
+  var removeBtn = el('button','btn-remove','✕');
+  removeBtn.title = L.removeTitle;
+  (function(pid){removeBtn.addEventListener('click',function(){removeProduct(pid);});})(p.id);
+  rightDiv.appendChild(badge);
+  rightDiv.appendChild(removeBtn);
+  head.appendChild(numSpan);
+  head.appendChild(rightDiv);
+  row.appendChild(head);
+
+  // Body row 1: desc, type, fabric, width, height
+  var body1 = el('div','prod-body');
+
+  // Description
+  var descF = el('div','prod-field');
+  descF.appendChild(el('label','',L.descLabel));
+  var descI = inp('text', p.desc||'');
+  descI.placeholder = L.descPh;
+  descI.style.cssText = 'width:100%;padding:8px 11px;border:1.5px solid var(--border);border-radius:8px;font-size:13px;font-family:inherit;background:var(--warm-white);';
+  (function(pid){descI.addEventListener('input',function(){
+    var pr=getProd(pid); if(pr) pr.desc=this.value;
+  });})(p.id);
+  descF.appendChild(descI);
+  body1.appendChild(descF);
+
+  // Type
+  var typeF = el('div','prod-field');
+  typeF.appendChild(el('label','',L.typeLabel));
+  var typeS = sel([
+    {val:'plisse20',lbl:L.types.plisse20},
+    {val:'dupli25', lbl:L.types.dupli25},
+    {val:'dupli32', lbl:L.types.dupli32}
+  ], p.type);
+  (function(pid){typeS.addEventListener('change',function(){
+    var pr=getProd(pid); if(!pr) return;
+    pr.type=this.value; calcProduct(pr); updateBadge(pr); updateSummary();
+  });})(p.id);
+  typeF.appendChild(typeS);
+  body1.appendChild(typeF);
+
+  // Fabric
+  var fabF = el('div','prod-field');
+  fabF.appendChild(el('label','',L.fabLabel));
+  var fabBtns = el('div','fab-btns');
+  ['A','B','C','D','E'].forEach(function(k){
+    var b = el('button','fab-btn'+(p.cls===k?' active':''), k);
+    (function(pid,cls){b.addEventListener('click',function(){
+      var pr=getProd(pid); if(!pr) return;
+      pr.cls=cls; calcProduct(pr); updateBadge(pr); updateSummary();
+      var container=document.getElementById('prod-'+pid);
+      if(container) container.querySelectorAll('.fab-btn').forEach(function(fb){
+        fb.className='fab-btn'+(fb.textContent===cls?' active':'');
+      });
+    });})(p.id, k);
+    fabBtns.appendChild(b);
+  });
+  fabF.appendChild(fabBtns);
+  body1.appendChild(fabF);
+
+  // Width
+  var wF = el('div','prod-field');
+  wF.appendChild(el('label','',L.widthLabel));
+  var wI = inp('number', p.w, 60, 300, 10);
+  (function(pid){wI.addEventListener('input',function(){
+    var pr=getProd(pid); if(!pr) return;
+    pr.w=parseInt(this.value)||120; calcProduct(pr); updateBadge(pr); updateSummary();
+  });})(p.id);
+  wF.appendChild(wI);
+  body1.appendChild(wF);
+
+  // Height
+  var hF = el('div','prod-field');
+  hF.appendChild(el('label','',L.heightLabel));
+  var hI = inp('number', p.h, 100, 300, 10);
+  (function(pid){hI.addEventListener('input',function(){
+    var pr=getProd(pid); if(!pr) return;
+    pr.h=parseInt(this.value)||150; calcProduct(pr); updateBadge(pr); updateSummary();
+  });})(p.id);
+  hF.appendChild(hI);
+  body1.appendChild(hF);
+
+  row.appendChild(body1);
+
+  // Body row 2: model, qty
+  var body2 = el('div','prod-body2');
+
+  var modF = el('div','prod-field');
+  modF.appendChild(el('label','',L.modelLabel));
+  var modS = sel(MODEL_KEYS.map(function(k){return {val:k,lbl:L.models[k]};}), p.model);
+  (function(pid){modS.addEventListener('change',function(){
+    var pr=getProd(pid); if(!pr) return;
+    pr.model=this.value; calcProduct(pr); updateBadge(pr); updateSummary();
+  });})(p.id);
+  modF.appendChild(modS);
+  body2.appendChild(modF);
+
+  var qtyF = el('div','prod-field');
+  qtyF.appendChild(el('label','',L.qtyLabel));
+  var qtyI = inp('number', p.qty||1, 1, 20, 1);
+  (function(pid){qtyI.addEventListener('input',function(){
+    var pr=getProd(pid); if(!pr) return;
+    pr.qty=parseInt(this.value)||1; updateBadge(pr); updateSummary();
+  });})(p.id);
+  qtyF.appendChild(qtyI);
+  body2.appendChild(qtyF);
+
+  row.appendChild(body2);
+
+  // Options
+  var opts = el('div','prod-opts');
+  function makeOpt(label, field, checked) {
+    var lbl = document.createElement('label');
+    lbl.className = 'prod-opt';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.checked = checked;
+    (function(pid,f){cb.addEventListener('change',function(){
+      var pr=getProd(pid); if(!pr) return;
+      pr[f]=this.checked; calcProduct(pr); updateBadge(pr); updateSummary();
+    });})(p.id, field);
+    lbl.appendChild(cb);
+    lbl.appendChild(document.createTextNode(' '+label));
+    return lbl;
+  }
+  opts.appendChild(makeOpt(L.optL,'optL',p.optL));
+  opts.appendChild(makeOpt(L.optU,'optU',p.optU));
+  opts.appendChild(makeOpt(L.optD,'optD',p.optD));
+  row.appendChild(opts);
+
+  return row;
+}
+
+function updateBadge(p) {
+  var badge = document.getElementById('prod-badge-'+p.id);
+  if (!badge) return;
+  var lineTotal = p.price!==null ? p.price*(p.qty||1) : null;
+  badge.childNodes[0].textContent = lineTotal!==null ? kr(lineTotal) : '—';
+  badge.childNodes[1].textContent = ' '+t().exclVat;
+}
+
+function getProd(pid) {
+  for (var i=0;i<products.length;i++) if (products[i].id===pid) return products[i];
+  return null;
+}
+
+// ─── ADD / REMOVE PRODUCTS ─────────────────────────────────────────────
+function addProduct() {
+  if (products.length>=5){alert(t().maxProds);return;}
+  prodCounter++;
+  var p = {id:prodCounter,type:'plisse20',cls:'C',w:120,h:150,model:'AO10',qty:1,desc:'',optL:false,optU:false,optD:false,price:null};
+  products.push(p);
+  calcProduct(p);
+  var container = document.getElementById('prod-container');
+  container.appendChild(renderProd(p, products.length-1));
+  updateSummary();
+  if (products.length>=5) document.getElementById('btn-add').style.display='none';
+}
+
+function removeProduct(pid) {
+  products = products.filter(function(p){return p.id!==pid;});
+  var rowEl = document.getElementById('prod-'+pid);
+  if (rowEl) rowEl.parentNode.removeChild(rowEl);
+  // Renumber visible rows
+  var container = document.getElementById('prod-container');
+  var rows = container.querySelectorAll('.prod-row');
+  var L = t();
+  rows.forEach(function(row, i) {
+    var numEl = row.querySelector('.prod-num');
+    if (numEl) numEl.textContent = L.prod(i+1);
+  });
+  updateSummary();
+  document.getElementById('btn-add').style.display='flex';
+}
+
+function updateSummary() {
+  var L=t(), total=0, count=0;
+  products.forEach(function(p){
+    if(p.price!==null){total+=p.price*(p.qty||1);count++;}
+  });
+  var sumEl=document.getElementById('sum-total');
+  if(sumEl) sumEl.textContent='kr '+total.toLocaleString('no-NO');
+  set('sum-count', L.prodsConf(count));
+  set('sum-lbl', L.sumLbl);
+  set('btn-quote-lbl', L.makeQuote);
+  set('btn-add-lbl', L.addProd);
+}
+
+// ─── QUOTE ─────────────────────────────────────────────────────────────
+function refreshQuote() {
+  var L=t();
+  var discount     = parseFloat(document.getElementById('q-discount').value)||0;
+  var installation = parseFloat(document.getElementById('q-installation').value)||0;
+  var shipping     = parseFloat(document.getElementById('q-shipping').value)||0;
+
+  var listEl = document.getElementById('q-prod-list');
+  listEl.innerHTML = '';
+  if (!products.length) {
+    listEl.appendChild(el('div','',L.noProds));
+    listEl.firstChild.style.cssText='color:var(--text-light);font-size:13px;padding:10px 0;';
+  } else {
+    products.forEach(function(p,i){
+      var item = el('div','q-prod-item');
+      var itemRow = el('div','q-prod-item-row');
+      var nameDiv = el('div');
+      nameDiv.appendChild(el('div','q-prod-name', p.desc||L.prod(i+1)));
+      var sub = L.types[p.type]+' · '+L.gruppeWord+' '+p.cls+' · '+L.models[p.model]+' · '+p.w+'×'+p.h+' cm · '+L.qtyLabel+' '+(p.qty||1);
+      nameDiv.appendChild(el('div','q-prod-sub',sub));
+      var lineTotal = p.price!==null ? p.price*(p.qty||1) : null;
+      var amtDiv = el('div','q-prod-amt', lineTotal!==null ? kr(lineTotal) : L.invalid);
+      if (lineTotal===null) amtDiv.style.color='#e05d5d';
+      itemRow.appendChild(nameDiv);
+      itemRow.appendChild(amtDiv);
+      item.appendChild(itemRow);
+      listEl.appendChild(item);
+    });
+  }
+
+  var prodSum=0;
+  products.forEach(function(p){if(p.price!==null) prodSum+=p.price*(p.qty||1);});
+  var discAmt=Math.round(prodSum*discount/100);
+  var totalExVat=prodSum-discAmt+installation+shipping;
+  var vat=Math.round(totalExVat*0.25);
+  var totalIncVat=totalExVat+vat;
+
+  var totalsEl=document.getElementById('q-totals');
+  totalsEl.innerHTML='';
+
+  function addTotalRow(label,value,cls){
+    var row=el('div','q-total-row'+(cls?' '+cls:''));
+    row.appendChild(el('span','',label));
+    row.appendChild(el('span','',value));
+    totalsEl.appendChild(row);
+  }
+
+  addTotalRow(L.prodSum, kr(prodSum));
+  if (discount>0) addTotalRow(L.disc+' ('+discount+'%)', '− '+kr(discAmt), 'discount');
+  if (installation>0) addTotalRow(L.inst, kr(installation));
+  if (shipping>0) addTotalRow(L.ship, kr(shipping));
+  addTotalRow(L.totalExVat, kr(totalExVat), 'grand');
+  addTotalRow(L.vat, kr(vat));
+
+  var incVat=el('div','q-incvat');
+  incVat.appendChild(el('span','',L.totalIncVat));
+  incVat.appendChild(el('span','q-incvat-val',kr(totalIncVat)));
+  totalsEl.appendChild(incVat);
+}
+
+function printQuote() {
+  var L=t();
+  var discount     = parseFloat(document.getElementById('q-discount').value)||0;
+  var installation = parseFloat(document.getElementById('q-installation').value)||0;
+  var shipping     = parseFloat(document.getElementById('q-shipping').value)||0;
+  var validity     = parseInt(document.getElementById('q-validity').value)||14;
+  var customer     = document.getElementById('q-name').value||'—';
+  var ref          = document.getElementById('q-ref').value||'';
+  var addr         = document.getElementById('q-addr').value||'';
+  var city         = document.getElementById('q-city').value||'';
+  var email        = document.getElementById('q-email').value||'';
+  var note         = document.getElementById('q-note').value||'';
+  var seller       = document.getElementById('q-seller').value||'Royal Solskjerming AS';
+  var sellerEmail  = document.getElementById('q-semail').value||'';
+  var phone        = document.getElementById('q-phone').value||'';
+
+  var today=new Date();
+  var validUntil=new Date(today);
+  validUntil.setDate(today.getDate()+validity);
+  var locale=LANG==='en'?'en-GB':'no-NO';
+  function fmt(d){return d.toLocaleDateString(locale,{day:'2-digit',month:'2-digit',year:'numeric'});}
+
+  var prodSum=0;
+  products.forEach(function(p){if(p.price!==null) prodSum+=p.price*(p.qty||1);});
+  var discAmt=Math.round(prodSum*discount/100);
+  var totalExVat=prodSum-discAmt+installation+shipping;
+  var vat=Math.round(totalExVat*0.25);
+  var totalIncVat=totalExVat+vat;
+
+  var quoteNum='RQ-'+today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+String(today.getDate()).padStart(2,'0')+'-'+String(prodCounter).padStart(3,'0');
+
+  // Build print window using document.write with safe string parts
+  var win=window.open('','_blank');
+  if (!win){alert(L.popupBlocked);return;}
+
+  var d=win.document;
+  d.write('<!DOCTYPE html>');
+  d.write('<html><head><meta charset="UTF-8">');
+  d.write('<title>'+L.pdfTitle+' '+quoteNum+'<\/title>');
+  d.write('<style>');
+  d.write('*{box-sizing:border-box;margin:0;padding:0;}');
+  d.write('body{font-family:Arial,sans-serif;font-size:12px;color:#1a2535;padding:18mm 16mm;}');
+  d.write('.hdr{display:flex;justify-content:space-between;margin-bottom:28px;padding-bottom:16px;border-bottom:3px solid #1a2535;}');
+  d.write('.logo{font-size:26px;font-weight:700;}');
+  d.write('.logo em{color:#c8864a;font-style:normal;}');
+  d.write('.meta{text-align:right;font-size:11px;color:#718096;}');
+  d.write('.meta strong{font-size:15px;color:#1a2535;display:block;margin-bottom:4px;}');
+  d.write('.parties{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:24px;}');
+  d.write('.party-lbl{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#718096;margin-bottom:4px;}');
+  d.write('.party-name{font-size:14px;font-weight:700;margin-bottom:3px;}');
+  d.write('.party-info{font-size:11px;color:#4a5568;line-height:1.6;}');
+  d.write('table{width:100%;border-collapse:collapse;margin-bottom:18px;}');
+  d.write('thead{background:#1a2535;color:white;}');
+  d.write('th{padding:9px 11px;text-align:left;font-size:11px;font-weight:600;}');
+  d.write('td{padding:9px 11px;border-bottom:1px solid #e2ddd5;font-size:11px;vertical-align:top;}');
+  d.write('tr:nth-child(even) td{background:#f9f8f6;}');
+  d.write('small{color:#718096;}');
+  d.write('.totals{margin-left:auto;width:280px;}');
+  d.write('.trow{display:flex;justify-content:space-between;padding:5px 0;font-size:12px;color:#4a5568;border-bottom:1px solid #e2ddd5;}');
+  d.write('.trow.disc{color:#e05d5d;}');
+  d.write('.trow.grand{font-size:15px;font-weight:700;color:#1a2535;border-bottom:none;padding-top:10px;}');
+  d.write('.trow.incvat{background:#1a2535;color:white;padding:10px 12px;border-radius:6px;margin-top:6px;font-size:13px;font-weight:700;border-bottom:none;}');
+  d.write('.trow.incvat span:last-child{color:#e8a870;}');
+  d.write('.note{margin-top:20px;padding:12px;background:#f5f0e8;border-radius:6px;font-size:11px;color:#4a5568;}');
+  d.write('.validity{margin-top:18px;font-size:11px;color:#718096;text-align:center;}');
+  d.write('.footer{margin-top:28px;padding-top:14px;border-top:1px solid #e2ddd5;font-size:10px;color:#718096;text-align:center;}');
+  d.write('<\/style>');
+  d.write('<\/head>');
+  d.write('<body>');
+  d.write('<div class="hdr">');
+  d.write('<div><div class="logo">royal<em>®<\/em><\/div>');
+  d.write('<div style="font-size:11px;color:#718096;margin-top:3px;">Plissé &amp; Dupli<\/div><\/div>');
+  d.write('<div class="meta"><strong>'+L.pdfTitle+'<\/strong>');
+  d.write(quoteNum+'<br>'+L.pdfDate+': '+fmt(today)+'<br>'+L.pdfValid+': '+fmt(validUntil)+'<\/div>');
+  d.write('<\/div>');
+  d.write('<div class="parties">');
+  d.write('<div><div class="party-lbl">'+L.pdfCust+'<\/div>');
+  d.write('<div class="party-name">'+customer+'<\/div>');
+  d.write('<div class="party-info">');
+  if(addr) d.write(addr+'<br>');
+  if(city) d.write(city+'<br>');
+  if(email) d.write(email);
+  if(ref) d.write('<br>Ref: '+ref);
+  d.write('<\/div><\/div>');
+  d.write('<div><div class="party-lbl">'+L.pdfSell+'<\/div>');
+  d.write('<div class="party-name">'+seller+'<\/div>');
+  d.write('<div class="party-info">');
+  if(phone) d.write(phone+'<br>');
+  if(sellerEmail) d.write(sellerEmail);
+  d.write('<\/div><\/div>');
+  d.write('<\/div>');
+  d.write('<table><thead><tr>');
+  d.write('<th style="width:28px;">#<\/th>');
+  d.write('<th>'+( LANG==='en'?'Product / Description':'Produkt / Beskrivelse')+'<\/th>');
+  d.write('<th style="width:44px;text-align:center;">'+L.pdfQty+'<\/th>');
+  d.write('<th style="width:100px;text-align:right;">'+L.pdfUnitP+'<\/th>');
+  d.write('<th style="width:100px;text-align:right;">'+L.pdfLineT+'<\/th>');
+  d.write('<\/tr><\/thead><tbody>');
+  products.forEach(function(p,i){
+    var typeLabel=L.types[p.type];
+    var modelLabel=L.models[p.model];
+    var lineTotal=p.price!==null?p.price*(p.qty||1):0;
+    var unitP=p.price!==null?p.price:0;
+    var desc=p.desc||L.prod(i+1);
+    d.write('<tr>');
+    d.write('<td>'+(i+1)+'<\/td>');
+    d.write('<td><strong>'+desc+'<\/strong><br><small>'+typeLabel+' · '+L.gruppeWord+' '+p.cls+' · '+modelLabel+' · '+p.w+'×'+p.h+' cm<\/small><\/td>');
+    d.write('<td style="text-align:center;">'+(p.qty||1)+'<\/td>');
+    d.write('<td style="text-align:right;font-family:monospace;">'+kr(unitP)+'<\/td>');
+    d.write('<td style="text-align:right;font-family:monospace;font-weight:700;">'+kr(lineTotal)+'<\/td>');
+    d.write('<\/tr>');
+  });
+  d.write('<\/tbody><\/table>');
+  d.write('<div class="totals">');
+  d.write('<div class="trow"><span>'+L.prodSum+'<\/span><span>'+kr(prodSum)+'<\/span><\/div>');
+  if(discount>0) d.write('<div class="trow disc"><span>'+L.disc+' '+discount+'%<\/span><span>− '+kr(discAmt)+'<\/span><\/div>');
+  if(installation>0) d.write('<div class="trow"><span>'+L.inst+'<\/span><span>'+kr(installation)+'<\/span><\/div>');
+  if(shipping>0) d.write('<div class="trow"><span>'+L.ship+'<\/span><span>'+kr(shipping)+'<\/span><\/div>');
+  d.write('<div class="trow grand"><span>'+L.totalExVat+'<\/span><span>'+kr(totalExVat)+'<\/span><\/div>');
+  d.write('<div class="trow"><span>'+L.vat+'<\/span><span>'+kr(vat)+'<\/span><\/div>');
+  d.write('<div class="trow incvat"><span>'+L.totalIncVat+'<\/span><span>'+kr(totalIncVat)+'<\/span><\/div>');
+  d.write('<\/div>');
+  if(note) d.write('<div class="note"><strong>'+(LANG==='en'?'Note:':'Merknad:')+'<\/strong> '+note+'<\/div>');
+  d.write('<div class="validity">'+L.pdfValidFor(validity,fmt(validUntil))+'<\/div>');
+  d.write('<div class="footer">'+L.pdfFooter+'<\/div>');
+  d.write('<\/body><\/html>');
+  d.close();
+  setTimeout(function(){win.print();},600);
+}
+
+// ─── PRICE TABLE ───────────────────────────────────────────────────────
+var currentPtClass = 'A';
+
+function renderPriceTable(cls) {
+  currentPtClass = cls||'A';
+  var L=t(), g=FABRIC_GROUPS[currentPtClass];
+
+  // Update buttons
+  document.querySelectorAll('.pt-btn').forEach(function(b){
+    b.className='pt-btn'+(b.dataset.cls===currentPtClass?' active':'');
+  });
+
+  // Info
+  var infoEl=document.getElementById('pt-info');
+  if(infoEl && g) infoEl.textContent=(LANG==='no'?g.name_no:g.name_en)+' — '+(LANG==='no'?g.desc_no:g.desc_en);
+
+  var head=document.getElementById('pt-head');
+  var body=document.getElementById('pt-body');
+  if(!head||!body) return;
+
+  // Header
+  head.innerHTML='';
+  var th0=el('th','','H ↓ / B →');
+  head.appendChild(th0);
+  WIDTHS.forEach(function(w){head.appendChild(el('th','',''+w));});
+
+  // Body
+  body.innerHTML='';
+  var data=PRICE_DATA[currentPtClass];
+  if(!data) return;
+  HEIGHTS.forEach(function(h,hi){
+    var tr=document.createElement('tr');
+    var th=el('th','',''+h);
+    th.style.cssText='text-align:left;font-weight:600;background:var(--sand);position:sticky;left:0;';
+    tr.appendChild(th);
+    WIDTHS.forEach(function(w,wi){
+      var v=data[hi][wi];
+      var td=document.createElement('td');
+      if(v!==null&&v!==undefined){
+        td.textContent=Math.round(v*1000).toLocaleString('no-NO');
+      } else {
+        td.textContent='–';
+        td.className='nd';
+      }
+      tr.appendChild(td);
+    });
+    body.appendChild(tr);
+  });
+}
+
+function renderPtControls() {
+  var controls=document.getElementById('pt-controls');
+  if(!controls) return;
+  controls.innerHTML='';
+  var lbl=el('span','');
+  lbl.style.cssText='font-size:13px;font-weight:600;color:var(--text-mid);margin-right:8px;';
+  lbl.textContent=(LANG==='no'?'Stoffgruppe:':'Fabric group:');
+  controls.appendChild(lbl);
+  Object.keys(FABRIC_GROUPS).forEach(function(k){
+    var g=FABRIC_GROUPS[k];
+    var btn=el('button','pt-btn'+(k===currentPtClass?' active':''));
+    btn.dataset.cls=k;
+    btn.textContent=k+' – '+(LANG==='no'?g.name_no.split('–').slice(1).join('–').trim():g.name_en.split('–').slice(1).join('–').trim());
+    btn.addEventListener('click',function(){renderPriceTable(k);});
+    controls.appendChild(btn);
+  });
+}
+
+// ─── MODELS TAB ────────────────────────────────────────────────────────
+var MODELS_DATA = [
+  {code:'AO10',sc:0,   color:'#1a2535',badge_no:'Standard',    badge_en:'Standard',
+   name_no:'Fritthengende – 1 betjeningssnor', name_en:'Free-hanging – 1 operating cord',
+   desc_no:'Den mest populære modellen for faste, rette vinduer.',
+   desc_en:'The most popular model for fixed, straight windows.',
+   specs_no:[['Min. bredde','40 cm'],['Maks bredde','280/300 cm'],['Min. høyde','10 cm'],['Maks høyde','260/300 cm']],
+   specs_en:[['Min. width','40 cm'],['Max width','280/300 cm'],['Min. height','10 cm'],['Max height','260/300 cm']]},
+  {code:'AO20',sc:730, color:'#1e3a4a',badge_no:'Fri parkering',badge_en:'Free parking',
+   name_no:'2 betjeningssnorer + fri parkering', name_en:'2 operating cords + free parking',
+   desc_no:'To snorer gir fleksibel posisjonering i vindusrammen.',
+   desc_en:'Two cords allow flexible positioning within the window frame.',
+   specs_no:[['Min. bredde','40 cm'],['Maks bredde','280/300 cm']],
+   specs_en:[['Min. width','40 cm'],['Max width','280/300 cm']]},
+  {code:'AO30',sc:572, color:'#2d6e7e',badge_no:'Dag/Natt',     badge_en:'Day/Night',
+   name_no:'2-i-1 modell (dag/natt)',  name_en:'2-in-1 model (day/night)',
+   desc_no:'Kombiner to stoffer – lysgjennomsiktig og mørkleggende.',
+   desc_en:'Combine two fabrics – light-filtering and blackout.',
+   specs_no:[['Stoff 1','Plissé 20/25'],['Stoff 2','Dupli 25/32']],
+   specs_en:[['Fabric 1','Plissé 20/25'],['Fabric 2','Dupli 25/32']]},
+  {code:'AO40',sc:2096,color:'#4a3520',badge_no:'Skrå karm',    badge_en:'Angled frame',
+   name_no:'Skrå karm montering', name_en:'Angled frame mounting',
+   desc_no:'Tilpasset skrå vinduskarm, opptil 45°.',
+   desc_en:'Designed for angled window frames, up to 45°.',
+   specs_no:[['Maks vinkel','45°']], specs_en:[['Max angle','45°']]},
+  {code:'AO70',sc:1842,color:'#3a5a3a',badge_no:'Skrå variant',  badge_en:'Angled variant',
+   name_no:'Skrå karm (variant)', name_en:'Angled frame (variant)',
+   desc_no:'Alternativ til AO40 for spesielle skrå karmer.',
+   desc_en:'Alternative to AO40 for special angled frames.',
+   specs_no:[], specs_en:[]},
+  {code:'AK10',sc:1391,color:'#4a2535',badge_no:'Kjedetrekk',   badge_en:'Chain operated',
+   name_no:'Kjedetrekk betjening', name_en:'Chain operated',
+   desc_no:'Betjenes med kjede i stedet for snor.',
+   desc_en:'Operated with a chain instead of a cord.',
+   specs_no:[], specs_en:[]},
+  {code:'BB24',sc:1257,color:'#2a3545',badge_no:'Glassprofil',   badge_en:'Glass profile',
+   name_no:'Selvklebende glassprofil', name_en:'Self-adhesive glass profile',
+   desc_no:'Monteres direkte på glassflaten uten boring.',
+   desc_en:'Mounted directly on the glass surface without drilling.',
+   specs_no:[], specs_en:[]}
+];
+
+function renderModels() {
+  var grid=document.getElementById('models-grid');
+  if(!grid) return;
+  grid.innerHTML='';
+  var L=t();
+  MODELS_DATA.forEach(function(m){
+    var card=el('div','model-card');
+    var head=el('div','model-head');
+    head.style.background=m.color;
+    head.appendChild(el('div','model-code',m.code));
+    head.appendChild(el('div','model-badge', LANG==='no'?m.badge_no:m.badge_en));
+    card.appendChild(head);
+    var body=el('div','model-body');
+    body.appendChild(el('div','model-name', LANG==='no'?m.name_no:m.name_en));
+    body.appendChild(el('div','model-desc', LANG==='no'?m.desc_no:m.desc_en));
+    var specs=LANG==='no'?m.specs_no:m.specs_en;
+    specs.forEach(function(s){
+      var row=el('div','spec-row');
+      row.appendChild(el('span','spec-key',s[0]));
+      row.appendChild(el('span','',s[1]));
+      body.appendChild(row);
+    });
+    var sur=el('div','model-surcharge');
+    sur.appendChild(el('span','',(LANG==='no'?'Tillegg':'Surcharge')));
+    sur.appendChild(el('span','', m.sc===0?(LANG==='no'?'Inkludert':'Included'):'+ '+kr(m.sc)));
+    body.appendChild(sur);
+    card.appendChild(body);
+    grid.appendChild(card);
+  });
+}
+
+// ─── OPTIONS TAB ───────────────────────────────────────────────────────
+function renderWeightGrid() {
+  var grid=document.getElementById('weight-grid');
+  if(!grid) return;
+  grid.innerHTML='';
+  Object.keys(FABRIC_GROUPS).forEach(function(k){
+    var g=FABRIC_GROUPS[k];
+    var card=el('div','weight-card');
+    card.appendChild(el('div','weight-letter',g.letter));
+    var name=LANG==='no'?g.name_no:g.name_en;
+    card.appendChild(el('div','',(name.split('–')[1]||name).trim()));
+    card.firstChild.nextSibling.style.cssText='font-weight:700;font-size:11px;margin-bottom:4px;';
+    var desc=LANG==='no'?g.desc_no:g.desc_en;
+    var descEl=el('div','',desc);
+    descEl.style.cssText='font-size:10px;color:var(--text-mid);margin-bottom:6px;';
+    card.appendChild(descEl);
+    var wrap=el('div','weight-bar-wrap');
+    var bar=el('div','weight-bar');
+    bar.style.width=g.bar+'%';
+    wrap.appendChild(bar);
+    card.appendChild(wrap);
+    var areaEl=el('div','','Plissé: '+g.maxPlisse+' / Dupli: '+g.maxDupli);
+    areaEl.style.cssText='font-size:10px;font-weight:600;color:var(--teal);';
+    card.appendChild(areaEl);
+    grid.appendChild(card);
+  });
+}
+
+// ─── GUIDE TAB ─────────────────────────────────────────────────────────
+var GUIDE_DATA = [
+  {icon:'📏',title_no:'Måling',title_en:'Measuring',
+   text_no:'Mål bredde og høyde med millimeters nøyaktighet. Mål tre steder og bruk den minste verdien.',
+   text_en:'Measure width and height to millimetre accuracy. Measure in three places and use the smallest value.'},
+  {icon:'🔧',title_no:'Fritthengende montering',title_en:'Free-hanging mounting',
+   text_no:'Monter konsollene 5–8 cm fra karmen. Sørg for at de er i vater og på lik høyde.',
+   text_en:'Mount brackets 5–8 cm from the frame. Ensure they are level and at the same height.'},
+  {icon:'🪟',title_no:'Oppspent montering',title_en:'Tensioned mounting',
+   text_no:'Benytt spennskruer i topp og bunn. Bruk alltid riktig lengde for å unngå bøying.',
+   text_en:'Use tension screws at top and bottom. Always use the correct length to avoid bending.'},
+  {icon:'📐',title_no:'Dimensjonstips',title_en:'Dimension tips',
+   text_no:'Legg til 1–2 cm på bredde for bedre lysblokking. Høyde kan bestilles helt ned til 10 cm.',
+   text_en:'Add 1–2 cm to width for better light blocking. Height can be ordered down to 10 cm.'}
+];
+
+function renderGuide() {
+  var grid=document.getElementById('guide-grid');
+  if(!grid) return;
+  grid.innerHTML='';
+  GUIDE_DATA.forEach(function(g){
+    var card=el('div','guide-card');
+    var icon=el('div','',g.icon);
+    icon.style.cssText='font-size:28px;margin-bottom:10px;';
+    card.appendChild(icon);
+    card.appendChild(el('div','',(LANG==='no'?g.title_no:g.title_en)));
+    card.firstChild.nextSibling.style.cssText='font-weight:700;font-size:15px;margin-bottom:6px;';
+    var txt=el('div','',LANG==='no'?g.text_no:g.text_en);
+    txt.style.cssText='font-size:13px;color:var(--text-mid);line-height:1.7;';
+    card.appendChild(txt);
+    grid.appendChild(card);
+  });
+}
+
+// ─── LANGUAGE ──────────────────────────────────────────────────────────
+var STATIC_LABELS = [
+  ['h-brand',       'Royal Priskatalog',               'Royal Price Catalogue'],
+  ['h-blinds',      'Gardiner',                        'Blinds'],
+  ['h-sub',         'Interaktiv priskatalog · Gyldig fra januar 2026','Interactive price catalogue · Valid from January 2026'],
+  ['nl-calc',       'Priskalkulator',                  'Price Calculator'],
+  ['nl-models',     'Modeller',                        'Models'],
+  ['nl-options',    'Tilvalg & Tilbehør',   'Options & Accessories'],
+  ['nl-guide',      'Monteringsguide',                 'Mounting Guide'],
+  ['nl-tables',     'Pristabeller',                    'Price Tables'],
+  ['nl-quote',      'Tilbud',                          'Quote'],
+  ['calc-lbl',      'Steg-for-steg',                   'Step by step'],
+  ['calc-ttl',      'Priskalkulator',                  'Price Calculator'],
+  ['calc-dsc',      'Legg til opptil 5 produkter. Basert på AO10-prislisten (Plissé 20mm). Priser ekskl. mva.','Add up to 5 products. Based on AO10 price list (Plissé 20mm). Prices excl. VAT.'],
+  ['mod-lbl',       'Modeller',                        'Models'],
+  ['mod-ttl',       'Modelloversikt',                  'Model Overview'],
+  ['mod-dsc',       'Alle modeller for standard vinduer.','All models for standard windows.'],
+  ['opt-lbl',       'Tilvalg',                         'Options'],
+  ['opt-ttl',       'Tilvalg & Tilbehør',   'Options & Accessories'],
+  ['opt-wt-ttl',    'Stoffgrupper (vektklasser)',       'Fabric groups (weight classes)'],
+  ['guide-lbl',     'Guide',                           'Guide'],
+  ['guide-ttl',     'Monteringsguide',                 'Mounting Guide'],
+  ['tbl-lbl',       'Referanse',                       'Reference'],
+  ['tbl-ttl',       'Pristabeller – Plissé 20mm, AO10','Price Tables – Plissé 20mm, AO10'],
+  ['tbl-dsc',       'Fullstendige pristabeller ekskl. mva. Velg stoffgruppe:','Complete price tables excl. VAT. Select fabric group:'],
+  ['q-lbl',         'Tilbud',                          'Quote'],
+  ['q-ttl',         'Lag tilbud',                      'Create Quote'],
+  ['q-dsc',         'Fyll inn kundeinformasjon, juster priser og skriv ut PDF-tilbud.','Enter customer information, adjust prices and print a PDF quote.'],
+  ['qc-cust',       'Kundeinformasjon',                'Customer Information'],
+  ['ql-name',       'Kundenavn',                       'Customer name'],
+  ['ql-ref',        'Referanse',                       'Reference'],
+  ['ql-addr',       'Adresse',                         'Address'],
+  ['ql-city',       'By / Postnr',                     'City / Postcode'],
+  ['ql-email',      'E-post',                          'Email'],
+  ['ql-note',       'Merknad',                         'Note'],
+  ['qc-adj',        'Prisjusteringer',                 'Price Adjustments'],
+  ['qa-disc',       'Rabatt',                          'Discount'],
+  ['qa-disc-d',     'Trekkes fra produktsum',          'Deducted from product total'],
+  ['qa-inst',       'Montering',                       'Installation'],
+  ['qa-inst-d',     'Fast beløp ekskl. mva',     'Fixed amount excl. VAT'],
+  ['qa-ship',       'Frakt',                           'Shipping'],
+  ['qa-ship-d',     'Fast beløp ekskl. mva',     'Fixed amount excl. VAT'],
+  ['qa-val',        'Gyldighet',                       'Validity'],
+  ['qa-val-d',      'Dager fra i dag',                 'Days from today'],
+  ['qa-days',       'dager',                           'days'],
+  ['qc-sell',       'Selgerinformasjon',               'Seller Information'],
+  ['ql-seller',     'Selger',                          'Salesperson'],
+  ['ql-phone',      'Telefon',                         'Phone'],
+  ['ql-semail',     'Selgers e-post',                  'Seller email'],
+  ['qc-sum',        'Tilbudssammendrag',               'Quote Summary'],
+  ['btn-print-lbl', 'Skriv ut / Lagre som PDF',        'Print / Save as PDF'],
+  ['print-hint',    'Bruk nettleserens utskriftsfunksjon og velg Lagre som PDF','Use the browser print function and choose Save as PDF']
+];
+
+function setLang(lang) {
+  LANG = lang;
+  document.getElementById('btn-no').className='lang-btn'+(lang==='no'?' active':'');
+  document.getElementById('btn-en').className='lang-btn'+(lang==='en'?' active':'');
+  STATIC_LABELS.forEach(function(row){
+    var e=document.getElementById(row[0]);
+    if(e) e.textContent=(lang==='no'?row[1]:row[2]);
+  });
+  renderModels();
+  renderWeightGrid();
+  renderGuide();
+  renderPtControls();
+  renderPriceTable(currentPtClass);
+  // Re-render product rows
+  var container=document.getElementById('prod-container');
+  container.innerHTML='';
+  var savedProducts=products.slice();
+  products=[];
+  prodCounter=0;
+  savedProducts.forEach(function(p){
+    prodCounter++;
+    p.id=prodCounter;
+    products.push(p);
+    container.appendChild(renderProd(p,products.length-1));
+  });
+  updateSummary();
+  refreshQuote();
+}
+
+// ─── TABS ──────────────────────────────────────────────────────────────
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active');});
+  document.querySelectorAll('.nav-tab').forEach(function(b){b.classList.remove('active');});
+  var tabEl=document.getElementById('tab-'+id);
+  var navEl=document.getElementById('nt-'+id);
+  if(tabEl) tabEl.classList.add('active');
+  if(navEl) navEl.classList.add('active');
+  if(id==='quote') refreshQuote();
+}
+
+// ─── INIT ──────────────────────────────────────────────────────────────
+document.getElementById('btn-no').addEventListener('click',function(){setLang('no');});
+document.getElementById('btn-en').addEventListener('click',function(){setLang('en');});
+document.getElementById('btn-add').addEventListener('click',addProduct);
+document.getElementById('btn-quote').addEventListener('click',function(){showTab('quote');});
+document.getElementById('btn-print').addEventListener('click',printQuote);
+document.getElementById('q-discount').addEventListener('input',refreshQuote);
+document.getElementById('q-installation').addEventListener('input',refreshQuote);
+document.getElementById('q-shipping').addEventListener('input',refreshQuote);
+document.querySelectorAll('[data-tab]').forEach(function(btn){
+  btn.addEventListener('click',function(){showTab(this.dataset.tab);});
+});
+
+// Boot
+renderModels();
+renderWeightGrid();
+renderGuide();
+renderPtControls();
+renderPriceTable('A');
+addProduct();
+</script>
+</body>
+</html>
