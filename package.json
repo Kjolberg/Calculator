@@ -1,0 +1,14 @@
+{
+  "name": "royal-wt-backend",
+  "version": "1.0.0",
+  "main": "sieval-backend.js",
+  "scripts": {
+    "start": "node sieval-backend.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "node-fetch": "^2.7.0"
+  }
+}

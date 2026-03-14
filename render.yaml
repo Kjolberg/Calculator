@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: royal-wt-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node sieval-backend.js
+    envVars:
+      - key: WT_BASE_URL
+        value: https://bestilling.royalsolskjerming.no
+      - key: WT_DOMAIN
+        value: Royal
+      - key: WT_USERNAME
+        value: kristoffer
+      - key: WT_PASSWORD
+        sync: false
+      - key: PORT
+        value: 3001
